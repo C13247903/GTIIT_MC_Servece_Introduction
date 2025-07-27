@@ -2,6 +2,7 @@
 \documentclass[UTF8,a4paper]{article}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{ctex}
+\usepackage{xcolor}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
@@ -10,55 +11,195 @@
 \usepackage{graphicx} %插入图片的宏包
 \usepackage{float} %设置图片浮动位置的宏包
 \usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage[colorlinks=true,      % 启用彩色链接而非带框链接
+            linkcolor=blue,       % 内部链接（如目录、交叉引用）颜色为蓝色
+            urlcolor=brown,        % 外部链接颜色为蓝色
+            citecolor=blue]{hyperref}
 % \setlength{\parskip}{0.5em}
 \title{Minecraft游戏入门，以及如何掌握自行学习的能力}
-\author{编纂人：13247903 \and 9DA62C42}
+\author{编纂人：13247903, 9DA62C42}
 \begin{document}
 	\maketitle
 	\tableofcontents
 	\newpage
-	\par 本介绍和指南仅供参考，请访问网络时注意遵守法律法规并识别网站，注意防止诈骗。各个文段作者将标于文段后括号内。
+	\par 本介绍和指南仅供参考，请访问网络时注意遵守法律法规并识别网站，注意防止诈骗。
+	\par 本文中，蓝色为文章内超链接，棕色为外部超链接。
+	\par 各个文段作者将标于文段后括号内。
+
 	\section*{前言}
 		\par 本教程的创作目的，正如标题所示有两个部分。第一部分是关于Minecraft游戏入门，在这个部分我会给大家介绍一些Minecraft游戏从安装到游玩的操作流程，尤其是在游玩本校服务器时的注意事项。而第二个部分则是希望读者可以掌握在互联网时代下如何使用搜索引擎和一些实用性的网站来进行自行学习的能力。
 		\par 这两个目的并不会在教程中明确的做出区分，或者说这并不意味着教程会被分为两部分，一部分叫“Minecraft游戏入门”，另一部分叫“如何自行学习”。这两个话题会融合在一起来讨论。而本教程确实会分为多个不同的部分，具体可以移步目录。
 		\par 鉴于阅读这个教程的人很有可能是大一新生，有可能因为学业压力或者家庭原因，在上大学之前并没有过多的使用或深入使用过电脑，或者没有深入游玩Minecraft Java版的经验，所以本教程将会尽量以0基础的前提进行创作，竭尽所能帮助新玩家学习和学会学学习。
 		\par 希望您能认真看完本教程，并且将其举一反三地运用到您在互联网生活中的各个方面。
 		\par Enjoy your gaming time!
-		\begin{flushright}
-			(13247903)
-		\end{flushright}
+		\begin{flushright}(13247903)\end{flushright}
 		\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
 			\centering %图片居中
 			\includegraphics[width=0.3\textwidth]{./Pictures/maodiechongni.png} %插入图片，[]中设置图片大小，{}中是图片文件名
 			% \caption{Main name 2} %最终文档中希望显示的图片标题
-			\label{Fig.main2} %用于文内引用的标签
 		\end{figure}
-	\section{如何进入你服}
+	
+	\section{Minecraft游戏通识}
+		\par 本部分会介绍Minecraft游戏的通识，即通用知识，并不只是在加入本校服务器时适用，而是对于所有Minecraft Java版适用。
+		\begin{flushright}(13247903)\end{flushright}
+		\subsection{互联网学习所需要的良好品德/品质}
+			\par 在互联网上学习所需要的所谓“品德”或“品质”，其实无外乎两方面：尽量不麻烦他人，尽量不懒惰自己。
+			\par 所有人都知道21世纪是信息的时代，但是由于信息技术基础教育的缺失，这片知识与资料的沃土在相当一部分眼中仍是一片荒原，拘泥于两三个QQ与微信的群聊之中。遇到什么问题了，第一反应是去群里问“大佬”，求爷爷告奶奶。在受到指责时又羞于承认自己的能力不足，打肿脸充胖子，在群里到处炫耀自己所作的那些既不能被证实，也不能称得上实质的功绩。
+			\par 大伙都很忙，没有时间天天解答你的问题，也没有精力天天敷衍你的炫耀。而这里所谓的忙，其实并不是严格意义上的忙于做某事，而是对于频繁提问的无奈。想象一下，你正在打CS2，对方下的包都快几把炸了，你正忙着跑去拆弹，QQ还几把响个不停，打完这局打开QQ一看，一个所谓萌新在群里疯狂@你，问你怎么解压缩，问你怎么在手机上玩塞尔达传说，问你哎我操我GPA变60多了学长我会不会被劝退啊？我的评价是你赶紧被劝退回家种地得了。。。
+			\par 大学生，成年人，人，得比未成年人或动物更加像人一些，需要有更强的能动性，而不是被动性。自己去寻找、思考、解决问题。在包含着全国14亿人的互联网上搜索有没有相关问题的答案？在全国14亿人中有没有人和自己一样遇到了同样的问题？这些问题在全国14亿人中有没有得到解决？最终，你找到了问题的答案，或许在某个论坛，某个不知名的网站，B站等视频网站，百度贴吧等等。这就是能动性。
+			\par 而被动性就是天天在群里扯嗓子扯嗓子叫唤，大佬说一步你做一步，这一步点这个“我同意”，下一步点“选择安装路径”，再下一步点“安装”，如同西西弗斯推动巨石，所谓大佬就是西西弗斯，而问问题的人就是巨石，西西弗斯是痛苦的，而问问题的人已经不再是人，丧失了人的能动性，成为与巨石无异的，无生命力的，无智力的，无学习能力的石头，抑或是会被称为“人机”或者“小学生”。
+			\par 所以在我们所讨论的这种状态下，实际上并没有什么严格意义上的“大佬”与“萌新”，无非是一个有能动性的人，和一个无能动性的物。
+			\par 在一众超广泛传播的游戏中，Minecraft可以说是对于玩家来说信息技术门槛最高的一个，无论是Java的下载安装，到启动器的下载安装，到模组的下载安装，服务器的加入等等，都充满着对新玩家的挑战。相比其他游戏的下载-安装-运行-进游戏射爆敌人，Minecraft确实有着不低的门槛。所以这就更加要求玩家有互联网学习的良好品质。
+			\begin{flushright}(13247903)\end{flushright}
+		\subsection{Minecraft的实用网站}
+			\par 下面推荐几个minecraft实用网站
+			\par Minecraft官方网站：\href{https://www.minecraft.net/zh-hans}{https://www.minecraft.net/zh-hans}
+			\par 我的世界官方网站，指的是由微软运营的那个，不是网易的官网，在这里你可以进行正版皮肤的更换等等操作。因为网易代理的原因，你在浏览的时候该网站会疯狂的给你弹窗，让你去网易的官网浏览，不必理会点叉就行。
+			\par Minecraft中文wiki：\href{https://zh.minecraft.wiki/}{https://zh.minecraft.wiki/}
+			\par 我的世界原版最全的中文维基百科，你能在这里得知关于原版我的世界近乎一切的东西，包括普通的游戏教程，合成配方，或者是进阶性的游戏机制等等，强强强！
+			\par MC百科：\href{https://www.mcmod.cn/}{https://www.mcmod.cn/}
+			\par 我的世界中文互联网上目前最大的模组（mod）下载论坛，包括下载，介绍，合成配方，教程等等。有实力的！
+			\par 日后会补充
+			\par 从现在起，使用搜索引擎或者使用上面的网站搜索吧！
+			\begin{flushright}(13247903)\end{flushright}
+		\subsection{进入正题，如何安装、运行Minecraft}
+			\subsubsection{运行Minecraft的必要条件：Java运行环境，启动器}
+				\par Java运行环境，即JRE（Java Runtime Environment）是我的世界运行的基础，我的世界是由java语言编写的，自然也要有java语言运行的环境，并且这门语言也在不断的更新迭代之中，不同的我的世界版本可能会使用不同版本的java语言，自然也需要不同版本的java运行环境。
+				\par 具体对照如下：
+				\begin{itemize}
+					\item[-] 自\href{https://zh.minecraft.wiki/w/Java版1.12}{1.12}(\href{https://zh.minecraft.wiki/w/17w13a}{17w13a})起，运行Minecraft的最低要求为Java 8。
+					\item[-] 自\href{https://zh.minecraft.wiki/w/Java版1.17}{1.17}(\href{https://zh.minecraft.wiki/w/21w19a}{21w19a})起，运行Minecraft的最低要求为Java 16。
+					\item[-] 自\href{https://zh.minecraft.wiki/w/Java版1.18}{1.18}(\href{https://zh.minecraft.wiki/w/Java版1.18-pre2}{1.18-pre2})起，运行Minecraft的最低要求为Java 17。
+					\item[-] 自\href{https://zh.minecraft.wiki/w/Java版1.20.5}{1.20.5}(\href{https://zh.minecraft.wiki/w/24w14a}{24w14a})起，运行Minecraft的最低要求为Java 21，且操作系统须为64位.
+				\end{itemize}
+				\par 对照来源自Minecraft中文wiki，所以不懂就去搜！
+				\par 那么如何下载并安装呢？
+				\par Java 8：\href{https://www.java.com/zh-CN/download/?locale=zh}{https://www.java.com/zh-CN/download/?locale=zh}
+				\par Java 16、17、21似乎是因为原公司被收购的原因，下载地址有些不同
+				\par 下载地址：\href{https://www.oracle.com/java/technologies/downloads/}{https://www.oracle.com/java/technologies/downloads/}
+				\par 什么？你告诉我这个网站全他妈是英文？那我问你，你来上这个全英文授课的中外合办干什么？
+				\par 请选择所需的版本，根据自己的电脑操作系统（macOS或windows）下载并安装
+				\begin{flushright}(13247903)\end{flushright}
+			\subsubsection{启动器：启动minecraft的程序}
+				\hypertarget{1.3.2}{}
+				\par 你可能会问：我们只下载了java，又下载启动器，那游戏本体去哪了？
+				\par 其实现在的主流我的世界启动器都支持游戏的本体下载，甚至支持模组下载，只需要安装启动器，就可以在启动器内安装游戏本体。你可能会问这种在第三方的启动器里下载的是正版还是盗版？可以移步\hyperlink{1.4}{1.4 正版？盗版？}这一部分阅读。
+				\par 目前主流的启动器有：
+				\par Minecraft官方启动器：我的世界Mojang工作室官方的启动器，不能说是十全十美吧，但也能称得上是史中之史，别TM用，支持下载游戏，但是使用的是国外的下载源，给你等成棍木了都不一定能下载完。可以在下载器里面换皮肤（详见\hyperlink{1.4}{1.4 正版？盗版？}），但是皮肤似乎也可以在Minecraft官网上更换上传，所以就连这最后的一点作用官方启动器也失去了......
+				\par HMCL：支持windows系统、macOS和Linux，十分强大
+				\par PCL：只支持Windows系统，十分强大
+				\begin{flushright}(13247903)\end{flushright}
+				\par LauncherX：支持windows系统、macOS和Linux，非常美观，可以自动下载安装Java，自动下载安装模组等组件，甚至可以联机（但是似乎不稳定）
+				\par BakaXL：支持windows系统、macOS和Linux，也非常美观
+				\begin{flushright}(9DA62C42)\end{flushright}
+			\subsubsection{PCL下载}
+				\par PCL是由中国大佬\textbf{龙腾猫跃}（这个是真大佬）所编写的minecraft启动器，在爱发电平台上发布，进入爱发电网站搜索PCL就能找到下载页面
+				\par 此项目是捐款制，可以免费使用，也可以给作者点赞助。
+				\par 在下载页面找不到免费下载链接？你该配眼镜了！
+				\par 下载后运行，在上方栏 下载→正式版→选择你所需要的游戏版本下载
+				\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+					\centering %图片居中
+					\includegraphics[width=0.7\textwidth]{./Pictures/PCL_1.jpg} %插入图片，[]中设置图片大小，{}中是图片文件名
+					% \caption{Main name 2} %最终文档中希望显示的图片标题
+				\end{figure}
+				\par 可以看到下载页面有一堆东西，如果你要安装模组、整合包或者光影的话，请移步\hyperlink{1.5}{1.5 模组的安装}和\hyperlink{1.7}{1.7 光影、材质}这两章节进行阅读。
+				\par 不安装，只玩原版的话，就可以点击下载了。
+				\par 同时，强烈建议开启 设置→启动→默认版本隔离→隔离所有版本。不开启的话你的模组、存档等等会变得一团糟！
+				\par 而在安装好java后，需要设置 设置→启动→游戏Java→自动选择合适的Java 。这样Java环境才算真正配置好。
+				\par 接下来就可以启动游戏了。
+				\begin{flushright}(13247903)\end{flushright}
+		\subsection{正版？盗版？}
+			\hypertarget{1.4}{}
+			\par 我的世界正版盗版之间的关系与其他游戏不同，在第三方启动器中下载的游戏和在官网下载的游戏其实没有任何的区别，正版盗版的唯一区别就是正版登录，也就是说我的世界的正版实际上是指正版账号，而没有正版账号的玩家可以使用离线登录（当然，这个方式在官方启动器中显然不可行，而在第三方启动器中被广泛使用）。
+			\par 正版登录与离线登录似乎都能正常游玩Minecraft，但是实际上有相当大的区别，尤其是在联机服务器方面。
+			\par 在正版登录下，Minecraft游戏内每个人的名称实际上是独一无二的，不允许重名的出现，因为服务器内每个人的信息，包括血量、背包内容、经验值、皮肤等等是按照游戏名储存和读取的。
+			\par 但是在离线登录下，虽然个人信息依旧根据游戏名存储和读取，但是离线登录他妈压根都称不上“登录”，你在离线登陆的时候，只需要胡几把给自己取个名字，然后就能启动游戏开玩了。那我问你，输入密码的环节在哪？要是有人跟你输入了同样的名字，那他自然就相当于使用着你胡乱编出来的名字游玩，就自然拥有着你的一切。。。懂了吧？或者你第一天使用的名字是123，第二天换成321，那你在第二天进入服务器的时候，你就别再惊讶于你那空空如也的背包了。。。
+			\par 虽然有些专供离线玩家游玩的服务器会选择安装登陆插件，使得玩家可以给自己的名字在进入服务器的时候注册并添加密码，但是目前学校的服务器没有添加，因为有开启正版验证的计划。
+			\par 什么是正版验证？正版验证是我的世界服务器的一个登录验证选项，对于开设Minecraft服务器的人来说，可以选择在服务器配置页面开启正版验证，这样的话只有拥有Minecraft正版账号，并以正版登录方式启动游戏的人才能进入服务器。
+			\par 关于网易版，网易版确实在法律层面上是正版，但似乎有人拆解网易启动器时发现其实使用的是离线登录，而网易版玩家实际上并不具有购买了我的世界的微软账户......有种广东以色列理工学院的学生实际上并没有以色列理工学院的学生账号的幽默感。
+			\par 尽管考虑到购买正版需要花费89 RMB的“巨款”，我们仍然强烈建议，甚至严肃要求您购入正版，尽管目前服务器并没有开启正版验证（即目前允许离线登录玩家进入服务器）。原因如下：
+			\begin{itemize}
+				\item[-] 日后因为各种原因（防止不明事理的人恶意破坏服务器内设施，利用离线登录顶替他人上线，离线登录与假人模组冲突的可能性等等），服务器很有可能开启正版验证。
+				\item[-] 群内有可能会有去开启了正版验证的大型服务器游玩的活动，如果你没有，你猜猜谁不会邀请？
+				\item[-] 你可能已经玩了这个游戏多年了，为什么不买一个正版呢？
+				\item[-] 你也不想被大家怀疑成是一个就算拿这钱去充原神月卡或者什么其他二游也不愿意购买正版Minecraft的人吧？
+				\item[-] 付不起89元的人已经被上海东方明珠化身防御塔发射激光打死了，被广东以色列理工学院吉祥物蚂蚁分尸了。
+			\end{itemize}
+			\begin{flushright}(13247903)\end{flushright}
+		\subsection{模组的安装}
+			\hypertarget{1.5}{}
+			\par 模组指的是在原版游戏之外新添加的内容，可以是辅助你玩游戏的小地图，或者是一些新内容（工业，暮色，新武器等等）。
+			\par 显然，模组不是原版游戏，自然也不算是Mojang的官方内容，自然原版游戏当然不能直接运行模组文件。我们需要模组加载器。
+			\par 目前主流模组加载器有：
+			\par Forge：最大，最早，最全，最强，最牛逼，最屌的模组加载器，近乎支持所有的版本（从我的世界测试版/远古版到1.20.1），强强强！
+			\par Neoforge：呃，1.20.1版本以及以上的forge叫这个名，因为在开发1.20.1以上版本forge时forge团队爆发了分歧，直接黑化分裂成为neoforge和forge两个团队，春日影这块。。。forge团队的原班人马目前基本都在neoforge团队，所以你可以认为forge只是在1.20.1后改了个名字，仍然强强强！
+			\par Fabric：后起之秀，优化据说是比forge好（似乎，我不道啊），跟forge差不多，只是版本支持没那么好（1.14以上），强强强！
+			\par 注意，forge和fabric是不可兼容的！
+			\par 并且有相当一部分模组只出了这两种加载器中的一个版本，意味着另外一个版本的模组加载器压根不能运行这个模组，也就是你玩不了！
+			\par 不过多数主流模组还是会提供两个加载器的版本的，不必过于惊慌。
+			\par 模组也有对应的版本，你必须安装与你所游玩的游戏版本一致的模组，否则无法运行（显然，不行就是不行）。
+			\par 模组加载器的下载在下载游戏中选择即可，下载后就已经包含了模组加载器。(PCL)
+			\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+				\centering %图片居中
+				\includegraphics[width=0.7\textwidth]{./Pictures/PCL_2.jpg} %插入图片，[]中设置图片大小，{}中是图片文件名
+				% \caption{Main name 2} %最终文档中希望显示的图片标题
+			\end{figure}
+			\par 一般选择最新版或稳定版。
+			\par 模组也可以在PCL内下载，或者前往MC百科下载，不作过多阐述。
+			\begin{flushright}(13247903)\end{flushright}
+		\subsection{整合包的安装}
+			\par 整合包，就是一堆模组打成一个包，这样就不用麻烦的一个一个下模组，只需要安装整合包即可。
+			\par 各个整合包的安装方法不大一样，目前没有特别统一的方法，但是基本上是导入安装。
+			\par 以生电服模组整合包为例，在群里下载下来以后，只需要将其拖到PCL页面，就可以自动导入，并且自动下载对应的版本游戏本体，所以就无需再次安装游戏，安装完成后就可以直接游玩。
+			\par 其他的整合包有可能有例外，具体可以尝试找到该整合包的官方发布网站，看看如何安装，或者去MC百科查询。
+			\begin{flushright}(13247903)\end{flushright}
+			\par 有关我服整合包的安装，请移步\hyperlink{2.3}{2.3 启动器选择和整合包的安装}查看。
+			\begin{flushright}(9DA62C42)\end{flushright}
+		\subsection{光影、材质}
+			\hypertarget{1.7}{}
+			\par 你觉得我的世界的光照太假了？你需要光影！
+			\par 光影和模组一样，需要光影加载器，光影会重构我的世界游戏内的光照逻辑，给你更真实的游戏体验，就是可能对显卡有需求
+			\par 怎么安装？自己查，毕竟这不是玩游戏必须
+			\par 材质可以改变游戏内方块的样貌，给你的游戏增添不同的风格。
+			\par 怎么安装？自己查，毕竟这不是玩游戏必须的
+			\begin{flushright}(13247903)\end{flushright}
+
+
+	\section{如何进入我服}
 		\subsection{Java的安装}
 			\subsubsection{如何选择Java版本}
 				\par 在Java官网得到的安装包版本最高只有8，如需JDK24，JDK21，需要移步oracle→产品→Java并选择你需要的Java版本。
 				\par 如果你需要使用本服务器的生电整合包，推荐Java17。
+				\begin{flushright}(9DA62C42)\end{flushright}
 			\subsubsection{对于LauncherX启动器}
 				\par 如果你要使用生电整合包，那么不建议使用LauncherX启动器。
 				\par 使用LauncherX启动器可以大大简化Java安装难度。打开软件→设置→Java虚拟机设定→下载Java→选择合适的版本。
-		\subsection{你服基本信息}
+				\begin{flushright}(9DA62C42)\end{flushright}
+		\subsection{我服基本信息}
 			\subsubsection{版本等基本信息}
 				\par 版本：1.20.1，模式：纯净生存。
+				\begin{flushright}(9DA62C42)\end{flushright}
 			\subsubsection{连接方式}
 				\par 使用网线连接校园网后在游戏内添加服务器[Github上隐藏ip]，或者直接使用连接[Github上隐藏ip]。前者只有在学校内使用校园网才行。
-				\par ip地址请移步你服QQ群群公告中查看。
-		\subsection{启动器选择}
+				\par ip地址请移步我服QQ群群公告中查看。
+				\begin{flushright}(9DA62C42)\end{flushright}
+		\subsection{启动器选择和整合包的安装}
+			\hypertarget{2.3}{}
 			\subsubsection{不建议使用的启动器}
 				\par 不建议使用官方启动器，LauncherX启动器，因为无法安装整合包，如果无需模组辅助可以考虑（不建议）。
-				\par 推荐使用PCL2和HMCL，如何下载请移步互联网。
-			\subsubsection{整合包在哪里}
+				\par 推荐使用PCL2和HMCL，如何下载请参阅\hyperlink{1.3.2}{1.3.2 启动器：启动minecraft的程序}。
+				\begin{flushright}(9DA62C42)\end{flushright}
+			\subsubsection{整合包在哪里？}
 				\par 整合包在群文件里，搜索1.20.1，下载“1.20.1生电整合包.zip”，并且记录下载位置，之后有用。
+				\begin{flushright}(9DA62C42)\end{flushright}
 			\subsubsection{HMCL}
 				\par 把下载的HMCL主体放在硬盘某个空白文件夹中，双击运行。
 				\par 如何安装整合包：打开软件→左侧选择“版本列表”→安装整合包→导入本地整合包文件→找到整合包文件并安装。
+				\begin{flushright}(9DA62C42)\end{flushright}
 			\subsubsection{PCL2}
 				\par 把下载的PCL2主体放在硬盘某个空白文件夹中，双击运行。
 				\par 如何安装整合包：打开软件→下载→整合包→安装已有整合包→找到整合包文件并安装。
+				\begin{flushright}(9DA62C42)\end{flushright}
 	\section{服务器内部基本介绍}
 		\subsection{末地工业区}
 			\subsubsection{大致地理位置}
@@ -72,16 +213,17 @@
 				\par $(19,\sim,-412)$: 村民交易所
 				\par $(-24,\sim,-566)$: 刷铁机
 				\par $(-36,\sim,-757)$: 袭击塔
+				\begin{flushright}(9DA62C42)\end{flushright}
 			\subsubsection{刷沙机（末地部分）}
 				\par 注意：刷沙机不可空跑，运行时需要保证假人Sand1, Sand2都在线。
 				\par 末地部分的刷沙机主要用于收集及固化混凝土粉末，固化功能需要手动开启。
 				\par 重力方块，如铁砧、沙子、混凝土粉末在收集区域的西侧。固化后的混凝土在收集区域的东侧。
 				\par 如何启用固化机：在确认刷沙机（主世界部分）只刷混凝土粉末时，在末地部分关闭坐标为(100,52,2)的拉杆，固化机会自动固化混凝土粉末并收集。
 				\par 如何关闭固化机：在末地部分打开坐标为(100,52,2)的拉杆即可。
-			\subsubsection{}
+				\begin{flushright}(9DA62C42)\end{flushright}
 	\section{常见问题}
 		\subsection{整合包相关}
 			\subsubsection{屏幕上会显示背包内容}
 				\par 此现象是物品栏HUD+导致，按"I"可以关闭。此模组的按键绑定可以在选项→按键控制→按键绑定→Inventory HUD+中修改。
-				
+				\begin{flushright}(9DA62C42)\end{flushright}
 \end{document}
